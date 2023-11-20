@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: max(1rem, 5vw);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
