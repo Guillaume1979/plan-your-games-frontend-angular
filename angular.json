@@ -34,7 +34,8 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/assets/styles"
+                "src/assets/styles",
+                "src/assets/styles/items"
               ]
             },
             "scripts": []

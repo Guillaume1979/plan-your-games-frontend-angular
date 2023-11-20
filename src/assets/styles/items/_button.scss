@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #ff0000;
+  --active-color: rgba(0, 0, 0, 0.20);
+}
+
+
+.btn {
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.basic-btn {
+  @extend .btn;
+  border: none;
+  background-color: inherit;
+}
+
+.round {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.btn:active, .basic-btn:active {
+  transform: scale(0.97);
+  background-color: var(--active-color);
+  box-shadow:  3px 2px 15px 1px var(--active-color);
+}
