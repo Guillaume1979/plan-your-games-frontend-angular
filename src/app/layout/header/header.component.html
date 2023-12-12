@@ -1,15 +1,19 @@
 <section class="logo">
-  <img ngSrc="assets/images/monsters_cartoon.png" alt="image du logo" width="100" height="100">
-  <a class="title">Plan Your Games</a>
+  <a class="title" [routerLink]="['dashboard']" uter>
+    <img ngSrc="assets/images/monsters_cartoon.png" alt="image du logo" width="100" height="100">
+    <span>Plan Your Games</span>
+  </a>
 </section>
 <section class="actions">
   <nav>
-      <a [routerLink]="['dashboard']">Dashboard</a>
-      <a>Mes sessions</a>
-      <a>Mes guildes</a>
+    <a [routerLink]="['dashboard']">Dashboard</a>
+    <a>Mes sessions</a>
+    <a>Mes guildes</a>
   </nav>
   <div>
     <a>Mon profil</a>
-    <button class="basic-btn round"><fa-icon [icon]="faLogin"></fa-icon></button>
+    <button class="basic-btn round">
+      <fa-icon [icon]="faLogin"></fa-icon>
+    </button>
   </div>
 </section>
