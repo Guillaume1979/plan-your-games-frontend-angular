@@ -6,13 +6,13 @@
 </section>
 <section class="actions">
   <nav>
-    <a [routerLink]="['dashboard']">Dashboard</a>
-    <a>Mes sessions</a>
-    <a>Mes guildes</a>
+    <a [routerLink]="['dashboard']" routerLinkActive="active-link">Dashboard</a>
+    <a [routerLink]="['sessions']" routerLinkActive="active-link">Mes sessions</a>
+    <a [routerLink]="['guilds']" routerLinkActive="active-link">Mes guildes</a>
   </nav>
   <div>
     <a>Mon profil</a>
-    <button class="basic-btn round">
+    <button class="flat-btn round">
       <fa-icon [icon]="faLogin"></fa-icon>
     </button>
   </div>

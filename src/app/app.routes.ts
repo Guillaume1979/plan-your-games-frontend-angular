@@ -17,6 +17,13 @@ export const routes: Routes = [
     //todo à compléter, pour les connexions sans authentification
     // ajouter un rapide descriptif du site et un bouton pour se connecter ou créer un compte
   },
+  {
+    path: 'sessions',
+    loadComponent: () =>
+      import('./components/session/session-list.component').then(
+        (m) => m.SessionListComponent,
+      ),
+  },
   // {
   //   path:'not-authorized',
   //   //todo à compléter
