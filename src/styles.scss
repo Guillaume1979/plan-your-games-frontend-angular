@@ -1,13 +1,16 @@
 @use 'reset';
+@use 'colors';
 @use 'items';
 @import 'material-icons/iconfont/material-icons.css';
+
 html {
   font-size: 62.5%; // 1rem = 10px
 }
 
 body {
-  font-family: 'Rubik', system-ui, sans-serif;
+  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif; //source : modernfontstacks.com
   font-size: 1.7rem; // 17px
+  font-weight: 500;
 }
 
 

@@ -1,16 +1,10 @@
-:root {
-  --primary-color: #ff0000;
-  --active-color: rgba(0, 0, 0, 0.20);
-}
-
-
 .btn {
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
 }
 
-.basic-btn {
+.flat-btn {
   @extend .btn;
   border: none;
   background-color: inherit;
@@ -21,8 +15,21 @@
   border-radius: 50%;
 }
 
-.btn:active, .basic-btn:active {
-  transform: scale(0.97);
-  background-color: var(--active-color);
-  box-shadow:  3px 2px 15px 1px var(--active-color);
+.round-btn {
+  @extend .btn;
+  @extend .round;
+}
+
+.round-flat-btn {
+  @extend .flat-btn;
+  @extend .round;
+}
+
+.btn, .flat-btn {
+  &:active {
+    transform: scale(0.97);
+    background-color: var(--active-color);
+    box-shadow:  3px 2px 15px 1px var(--active-color);
+  }
+
 }
