@@ -2,6 +2,7 @@
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
+  font: inherit;
 }
 
 .flat-btn {
@@ -28,8 +29,8 @@
 .btn, .flat-btn {
   &:active {
     transform: scale(0.97);
-    background-color: var(--active-color);
-    box-shadow:  3px 2px 15px 1px var(--active-color);
+    background-color: var(--btn-active-color);
+    box-shadow:  3px 2px 15px 1px var(--btn-active-color);
   }
 
 }
