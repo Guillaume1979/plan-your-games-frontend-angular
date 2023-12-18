@@ -2,12 +2,12 @@
 @use 'items';
 @import 'material-icons/iconfont/material-icons.css';
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
-  font-size: 1.7rem;
+  font-family: 'Rubik', system-ui, sans-serif;
+  font-size: 1.7rem; // 17px
 }
 
 
