@@ -27,10 +27,16 @@
 }
 
 .btn, .flat-btn {
+  &:hover {
+    background-color: burlywood; //todo : revoir la couleur
+    border-color: burlywood;
+  }
+
   &:active {
     transform: scale(0.97);
     background-color: var(--btn-active-color);
-    box-shadow:  3px 2px 15px 1px var(--btn-active-color);
+    border-color: var(--btn-active-color);
+    box-shadow: 3px 2px 15px 1px var(--btn-active-color);
   }
 
 }
