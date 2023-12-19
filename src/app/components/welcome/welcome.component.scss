@@ -10,8 +10,13 @@ h1 {
   margin-bottom: 5rem;
 }
 
+h1, h2 {
+  text-align: center;
+}
+
 p {
   align-self: start;
+  text-align: justify;
 }
 
 .join {
