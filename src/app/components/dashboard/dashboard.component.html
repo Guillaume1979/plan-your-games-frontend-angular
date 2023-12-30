@@ -1,1 +1,28 @@
-<p>dashboard works!</p>
+<h2>Mes 3 prochaines sessions</h2>
+<button>Créer une partie</button>
+
+<table>
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Heure</th>
+    <th>Nom du jeu</th>
+    <th>Participants</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (session of sessions; track session.id) {
+      <tr>
+        <td>{{ session.date | date:'ccc dd/MM/yy':'':'fr-FR'}}</td>
+        <td>{{ session.date | date:'shortTime':'':'fr-FR'}}</td>
+        <td>{{ session.game.name }}</td>
+        @for (participant of session.participants; track participant.uuid) {
+          <td>{{ participant.username }}</td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>
+
+<h2>Mes guildes</h2>
+<p>Détail des guildes avec le nombre de membres</p>
