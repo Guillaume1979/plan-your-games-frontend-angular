@@ -13,7 +13,7 @@
       "root": "",
       "sourceRoot": "src",
       "i18n": {
-        "sourceLocale": "fr-FR"
+        "sourceLocale": "fr"
       },
       "prefix": "app",
       "architect": {
