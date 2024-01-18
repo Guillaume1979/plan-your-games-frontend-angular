@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
+import { ENDPOINT_AUTH_DISCORD } from '../../../environment';
 
 @Component({
   selector: 'header',
@@ -19,4 +21,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class HeaderComponent {
   faLogin = faRightToBracket;
+
+  protected readonly ENDPOINT_AUTH_DISCORD = ENDPOINT_AUTH_DISCORD;
 }
