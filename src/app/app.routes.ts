@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AuthRedirectComponent } from './auth/auth-redirect.component';
 
 export const routes: Routes = [
   {
@@ -28,6 +29,10 @@ export const routes: Routes = [
   //   path:'not-authorized',
   //   //todo à compléter
   // },
+  {
+    path: 'login',
+    component: AuthRedirectComponent,
+  },
   {
     path: '',
     pathMatch: 'full',
