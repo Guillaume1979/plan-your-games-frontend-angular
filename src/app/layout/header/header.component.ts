@@ -5,6 +5,7 @@ import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 import { ENDPOINT_AUTH_DISCORD } from '../../../environment';
+import { LayoutService } from '../../services/layout.service';
 
 @Component({
   selector: 'header',
@@ -21,6 +22,8 @@ import { ENDPOINT_AUTH_DISCORD } from '../../../environment';
 })
 export class HeaderComponent {
   faLogin = faRightToBracket;
+
+  format = inject(LayoutService).format;
 
   protected readonly ENDPOINT_AUTH_DISCORD = ENDPOINT_AUTH_DISCORD;
 }
