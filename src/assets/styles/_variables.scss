@@ -1,4 +1,6 @@
 :root {
+  //---  COLORS  ---//
+
   --primary-color: #ff0000;
 
   // Buttons
@@ -7,4 +9,10 @@
 
   // Links
   --link-active-color: rgba(15, 102, 224, 1);
+
+  // Table
+  --tableWidth: 100%;
+  --tableBackgroundColor: white;
+  --tableItemBorderRadius: 20px;
+  --tableItemMobileWidth: max(40ch, 100%);
 }
