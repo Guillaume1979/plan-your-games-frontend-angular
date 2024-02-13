@@ -18,7 +18,7 @@
         <td data-label="nom du jeu">{{ session.game.name }}</td>
         <td data-label="participants">
           @for (participant of session.participants; track participant.uuid) {
-            {{ participant.username }}
+            <span>{{ participant.username }}</span>
           } @empty {
             Aucun participant
           }

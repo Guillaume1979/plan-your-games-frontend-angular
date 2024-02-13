@@ -10,6 +10,15 @@ button[data-label="creer"] {
   width: max(20ch,50%);
 }
 
+td[data-label="participants"] {
+  display: flex;
+  flex-direction: column;
+}
+
+td {
+  vertical-align: top;
+}
+
 table {
   background-color: var(--tableBackgroundColor);
   border-radius: var(--tableItemBorderRadius);
@@ -17,8 +26,15 @@ table {
   border-collapse: collapse;
 }
 
+thead th {
+  padding-block: 2.5rem;
+}
+thead {
+  font-size: 2rem;
+}
+
 th, td {
-  padding: 0.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 th:first-of-type, td:first-of-type {
@@ -57,10 +73,14 @@ tr:last-of-type td:first-child {
   font-weight: 600;
 }
 
-.handsetTable tr:nth-child(even) {
-  background-color: darkgrey;
-}
-
 .handsetTable th {
   display: none;
+}
+
+.handsetTable tr:first-of-type td:first-child {
+  border-top-right-radius: var(--tableItemBorderRadius);
+}
+
+.handsetTable tr:first-of-type td:first-child {
+  border-top-left-radius: var(--tableItemBorderRadius);
 }
