@@ -1,7 +1,7 @@
 <h2>Mes 3 prochaines sessions</h2>
-<button>Créer une partie</button>
+<button data-label="creer">Créer une partie</button>
 
-<table>
+<table [ngClass]="{'handsetTable': format()==='Handset'}">
   <thead>
   <tr>
     <th>Date</th>
@@ -13,12 +13,17 @@
   <tbody>
     @for (session of sessions; track session.id) {
       <tr>
-        <td>{{ session.date | date:'ccc dd/MM/yy':'':'fr-FR'}}</td>
-        <td>{{ session.date | date:'shortTime':'':'fr-FR'}}</td>
-        <td>{{ session.game.name }}</td>
-        @for (participant of session.participants; track participant.uuid) {
-          <td>{{ participant.username }}</td>
-        }
+        <td data-label="date">{{ session.date | date:'ccc dd/MM/yy':'':'fr-FR'}}</td>
+        <td data-label="heure">{{ session.date | date:'shortTime':'':'fr-FR'}}</td>
+        <td data-label="nom du jeu">{{ session.game.name }}</td>
+        <td data-label="participants">
+          @for (participant of session.participants; track participant.uuid) {
+            {{ participant.username }}
+          } @empty {
+            Aucun participant
+          }
+        </td>
+
       </tr>
     }
   </tbody>
