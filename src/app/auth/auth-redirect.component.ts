@@ -22,7 +22,7 @@ export class AuthRedirectComponent {
   }
 
   #checkIfCodeIsPresent(route: ActivatedRoute) {
-    this.route.queryParamMap.subscribe((param) => {
+    route.queryParamMap.subscribe((param) => {
       const code = param.get('code');
       if (code) this.authService.login(code);
     });
