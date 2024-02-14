@@ -1,9 +1,5 @@
-import { Component, inject, OnDestroy } from '@angular/core';
-import { catchError, Observable, Subscription, tap } from 'rxjs';
-import { JwtToken } from '../models/interfaces';
-import { ENDPOINT_API } from '../../environment';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Component({
