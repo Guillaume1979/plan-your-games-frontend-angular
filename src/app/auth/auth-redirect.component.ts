@@ -14,14 +14,8 @@ import { AuthService } from './auth.service';
   styles: '',
 })
 export class AuthRedirectComponent {
-  private readonly http = inject(HttpClient);
   private readonly route = inject(ActivatedRoute);
-  private readonly router = inject(Router);
   private readonly authService = inject(AuthService);
-
-  JWT_TOKEN_KEY = 'pygToken';
-  PATH = `${ENDPOINT_API}/auth/discord/getJwtToken`;
-  REDIRECTION_ROUTE = 'welcome';
 
   constructor() {
     this.#login();
@@ -34,8 +28,7 @@ export class AuthRedirectComponent {
   #checkIfCodeIsPresent(route: ActivatedRoute) {
     this.route.queryParamMap.subscribe((param) => {
       const code = param.get('code');
-      console.log('code = ', code);
-      if (code) this.authService.login();
+      if (code) this.authService.login(code);
     });
   }
 }
