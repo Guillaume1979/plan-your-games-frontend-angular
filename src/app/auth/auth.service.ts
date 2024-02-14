@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { effect, inject, Injectable, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ENDPOINT_JWT, JWT_TOKEN_KEY } from '../../environment';
 import { catchError, tap } from 'rxjs';
@@ -14,6 +14,13 @@ export class AuthService {
   router = inject(Router);
 
   isAuthenticated = signal<boolean>(false);
+
+  constructor() {
+    if (sessionStorage.getItem(JWT_TOKEN_KEY)) this.isAuthenticated.set(true);
+    effect(() => {
+      if (!this.isAuthenticated()) this.router.navigateByUrl('');
+    });
+  }
 
   login(code: string): void {
     const headers = new HttpHeaders({

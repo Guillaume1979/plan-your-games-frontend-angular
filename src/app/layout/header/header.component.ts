@@ -1,7 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import {
+  faRightFromBracket,
+  faRightToBracket,
+} from '@fortawesome/free-solid-svg-icons';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 import { ENDPOINT_AUTH_DISCORD } from '../../../environment';
@@ -22,8 +25,10 @@ import { LayoutService } from '../../services/layout.service';
 })
 export class HeaderComponent {
   faLogin = faRightToBracket;
+  faLogout = faRightFromBracket;
 
   format = inject(LayoutService).format;
+  authService = inject(AuthService);
 
   protected readonly ENDPOINT_AUTH_DISCORD = ENDPOINT_AUTH_DISCORD;
 }

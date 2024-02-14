@@ -5,15 +5,23 @@
   </a>
 </section>
 <section class="actions">
-  <nav>
-    <a [routerLink]="['dashboard']" routerLinkActive="active-link">Tableau de bord</a>
-    <a [routerLink]="['sessions']" routerLinkActive="active-link">Mes sessions</a>
-    <a [routerLink]="['guilds']" routerLinkActive="active-link">Mes guildes</a>
-  </nav>
+  @if (authService.isAuthenticated()) {
+    <nav>
+      <a [routerLink]="['dashboard']" routerLinkActive="active-link">Tableau de bord</a>
+      <a [routerLink]="['sessions']" routerLinkActive="active-link">Mes sessions</a>
+      <a [routerLink]="['guilds']" routerLinkActive="active-link">Mes guildes</a>
+    </nav>
+  }
   <div>
-    <a>Mon profil</a>
-    <a class="flat-btn round" href="{{ENDPOINT_AUTH_DISCORD}}">
-      <fa-icon [icon]="faLogin"></fa-icon>
-    </a>
+    @if (authService.isAuthenticated()) {
+      <a>username</a>
+      <button class="flat-btn " (click)="authService.logout()">
+        <fa-icon [icon]="faLogout"/>
+      </button>
+    } @else {
+      <a class="flat-btn" href="{{ENDPOINT_AUTH_DISCORD}}">
+        <fa-icon [icon]="faLogin"/>
+      </a>
+    }
   </div>
 </section>
