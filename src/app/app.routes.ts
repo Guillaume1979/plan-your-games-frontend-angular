@@ -30,7 +30,7 @@ export const routes: Routes = [
   //   //todo à compléter
   // },
   {
-    path: 'login',
+    path: `login`,
     component: AuthRedirectComponent,
   },
   {

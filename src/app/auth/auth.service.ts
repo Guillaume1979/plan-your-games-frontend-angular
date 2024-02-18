@@ -1,10 +1,11 @@
 import { effect, inject, Injectable, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ENDPOINT_JWT, JWT_TOKEN_KEY } from '../../environment';
-import { catchError, tap } from 'rxjs';
+import { catchError, switchMap, tap } from 'rxjs';
 import { JwtToken } from '../models/interfaces';
 import { Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { UserService } from '../services/user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,14 +13,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 export class AuthService {
   http = inject(HttpClient);
   router = inject(Router);
+  userService = inject(UserService);
 
   isAuthenticated = signal<boolean>(false);
 
   constructor() {
     if (sessionStorage.getItem(JWT_TOKEN_KEY)) this.isAuthenticated.set(true);
-    effect(() => {
-      if (!this.isAuthenticated()) this.router.navigateByUrl('');
-    });
   }
 
   login(code: string): void {
@@ -31,8 +30,12 @@ export class AuthService {
         tap((token) =>
           sessionStorage.setItem(JWT_TOKEN_KEY, token.access_token),
         ),
-        tap(() => this.isAuthenticated.set(true)),
-        tap(() => this.router.navigateByUrl('dashboard')),
+        switchMap(() =>
+          this.userService.getUserInfo().pipe(
+            tap(() => this.isAuthenticated.set(true)),
+            tap(() => this.router.navigateByUrl('dashboard')),
+          ),
+        ),
 
         //todo ajouter une snackbar quand il y a une erreur d'authentification
         // rendre la gestion d'erreur globale !
@@ -44,5 +47,6 @@ export class AuthService {
   logout() {
     sessionStorage.removeItem(JWT_TOKEN_KEY);
     this.isAuthenticated.set(false);
+    this.router.navigateByUrl('');
   }
 }
