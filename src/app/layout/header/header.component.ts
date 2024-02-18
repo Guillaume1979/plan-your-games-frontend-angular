@@ -9,6 +9,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 import { ENDPOINT_AUTH_DISCORD } from '../../../environment';
 import { LayoutService } from '../../services/layout.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'header',
@@ -29,6 +30,7 @@ export class HeaderComponent {
 
   format = inject(LayoutService).format;
   authService = inject(AuthService);
+  connectedUser = inject(UserService).connectedUser;
 
   protected readonly ENDPOINT_AUTH_DISCORD = ENDPOINT_AUTH_DISCORD;
 }
