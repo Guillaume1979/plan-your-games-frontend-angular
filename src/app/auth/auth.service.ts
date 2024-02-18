@@ -1,4 +1,4 @@
-import { effect, inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ENDPOINT_JWT, JWT_TOKEN_KEY } from '../../environment';
 import { catchError, switchMap, tap } from 'rxjs';
