@@ -14,7 +14,7 @@
   }
   <div>
     @if (authService.isAuthenticated()) {
-      <a>{{connectedUser().username}}</a>
+      <a>{{connectedUser().nickname}}</a>
       <button class="flat-btn " (click)="authService.logout()">
         <fa-icon [icon]="faLogout"/>
       </button>
