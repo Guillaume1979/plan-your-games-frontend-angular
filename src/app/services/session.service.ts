@@ -24,6 +24,11 @@ export class SessionService {
         new Player({ username: 'Kojak' }),
       ],
     },
+    {
+      date: new Date(2024, 2, 19),
+      game: { name: 'Humankind' },
+      participants: [],
+    },
   ]);
 
   constructor() {}
