@@ -4,6 +4,7 @@ import { Guild } from './guild';
 export class Player {
   uuid?: string;
   username = '';
+  nickname = '';
   avatar = '';
   guilds: Guild[] = [];
   sessions: Session[] = [];
