@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CdkTableModule } from '@angular/cdk/table';
 import { SessionService } from '../../services/session.service';
 import { LayoutService } from '../../services/layout.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +15,8 @@ import { LayoutService } from '../../services/layout.service';
 export class DashboardComponent {
   sessionService = inject(SessionService);
   format = inject(LayoutService).format;
-  displayedColumns = ['date', 'game', 'participants'];
+  user = inject(UserService).connectedUser;
+
+  // guilds = this.user().guilds;
   sessions = this.sessionService.sessions();
 }

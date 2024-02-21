@@ -14,10 +14,13 @@ export class UserService {
   #connectedUser = signal(new Player());
   connectedUser = this.#connectedUser.asReadonly();
 
+  constructor() {
+    this.getUserInfo().subscribe();
+  }
+
   getUserInfo(): Observable<Player> {
-    return this.http.get<Player>(`${ENDPOINT_API}/${this.PATH}/me`).pipe(
-      tap((user) => console.log(user)),
-      tap((user) => this.#connectedUser.set(user)),
-    );
+    return this.http
+      .get<Player>(`${ENDPOINT_API}/${this.PATH}/me`)
+      .pipe(tap((user) => this.#connectedUser.set(user)));
   }
 }

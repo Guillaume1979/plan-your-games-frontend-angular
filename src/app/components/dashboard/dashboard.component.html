@@ -13,8 +13,8 @@
   <tbody>
     @for (session of sessions; track session.id) {
       <tr>
-        <td data-label="date">{{ session.date | date:'ccc dd/MM/yy':'':'fr-FR'}}</td>
-        <td data-label="heure">{{ session.date | date:'shortTime':'':'fr-FR'}}</td>
+        <td data-label="date">{{ session.date | date:'ccc dd/MM/yy':'':'fr-FR' }}</td>
+        <td data-label="heure">{{ session.date | date:'shortTime':'':'fr-FR' }}</td>
         <td data-label="nom du jeu">{{ session.game.name }}</td>
         <td data-label="participants">
           @for (participant of session.participants; track participant.uuid) {
@@ -30,4 +30,19 @@
 </table>
 
 <h2>Mes guildes</h2>
-<p>Détail des guildes avec le nombre de membres</p>
+<table [ngClass]="{'handsetTable': format()==='Handset'}">
+  <thead>
+  <tr>
+    <th>Icon</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (guild of user().guilds; track guild) {
+      <tr>
+        <td data-label="icône de la guilde">{{ guild.icon }}</td>
+        <td data-label="nom de la guilde">{{ guild.name }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

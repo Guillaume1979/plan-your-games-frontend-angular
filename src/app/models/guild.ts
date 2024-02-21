@@ -1,7 +1,8 @@
 import { Player } from './player';
 
 export class Guild {
-  id?: number;
+  uuid?: number;
   name = '';
+  icon? = '';
   members: Player[] = [];
 }
