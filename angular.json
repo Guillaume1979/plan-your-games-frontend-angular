@@ -101,7 +101,14 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles",
+                "src/assets/styles/items"
+              ]
+            },
+            "scripts": [],
+            "karmaConfig": "karma.conf.js"
           }
         }
       }
