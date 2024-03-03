@@ -14,5 +14,5 @@ import { ENDPOINT_AUTH_DISCORD } from '../../../environment';
 export class WelcomeComponent {
   discord = faDiscord;
   exclamation = faExclamation;
-  protected readonly ENDPOINT_AUTH_DISCORD = ENDPOINT_AUTH_DISCORD;
+  readonly ENDPOINT_AUTH_DISCORD = ENDPOINT_AUTH_DISCORD;
 }
