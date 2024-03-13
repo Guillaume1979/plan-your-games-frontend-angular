@@ -15,10 +15,11 @@ export class AuthService {
   router = inject(Router);
   userService = inject(UserService);
 
-  isAuthenticated = signal<boolean>(false);
+  #isAuthenticated = signal<boolean>(false);
+  isAuthenticated = this.#isAuthenticated.asReadonly();
 
   constructor() {
-    if (sessionStorage.getItem(JWT_TOKEN_KEY)) this.isAuthenticated.set(true);
+    if (sessionStorage.getItem(JWT_TOKEN_KEY)) this.#isAuthenticated.set(true);
   }
 
   login(code: string): void {
@@ -32,7 +33,7 @@ export class AuthService {
         ),
         switchMap(() =>
           this.userService.getUserInfo().pipe(
-            tap(() => this.isAuthenticated.set(true)),
+            tap(() => this.#isAuthenticated.set(true)),
             tap(() => this.router.navigateByUrl('dashboard')),
           ),
         ),
@@ -46,7 +47,7 @@ export class AuthService {
 
   logout() {
     sessionStorage.removeItem(JWT_TOKEN_KEY);
-    this.isAuthenticated.set(false);
+    this.#isAuthenticated.set(false);
     this.router.navigateByUrl('');
   }
 }
