@@ -1,8 +1,9 @@
-import { Player } from './player';
+import { User } from './user';
 
 export class Guild {
   uuid?: number;
   name = '';
+  discordId = '';
   icon? = '';
-  members: Player[] = [];
+  members: User[] = [];
 }

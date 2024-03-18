@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { Session } from '../models/session';
-import { Player } from '../models/player';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -11,17 +11,21 @@ export class SessionService {
       date: new Date(2022, 3, 1),
       game: { name: 'Icarus' },
       participants: [
-        new Player({ username: 'Alice' }),
-        new Player({ username: 'Guitou' }),
-        new Player({ username: 'Toto' }),
+        new User({ username: 'Alice' }),
+        new User({
+          username: 'Guitou',
+          discordId: '294251344401793024',
+          avatar: '6e6b7d455cba4f7eddf98761172c7cb2',
+        }),
+        new User({ username: 'Toto' }),
       ],
     },
     {
       date: new Date(2023, 11, 31),
       game: { name: 'Mechabellum' },
       participants: [
-        new Player({ username: 'Guitou' }),
-        new Player({ username: 'Kojak' }),
+        new User({ username: 'Guitou' }),
+        new User({ username: 'Kojak' }),
       ],
     },
     {

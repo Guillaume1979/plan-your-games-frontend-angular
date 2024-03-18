@@ -1,15 +1,16 @@
 import { Session } from './session';
 import { Guild } from './guild';
 
-export class Player {
+export class User {
   uuid?: string;
   username = '';
   nickname = '';
   avatar = '';
+  discordId = '';
   guilds: Guild[] = [];
   sessions: Session[] = [];
 
-  constructor(init?: Partial<Player>) {
+  constructor(init?: Partial<User>) {
     Object.assign(this, init);
   }
 }

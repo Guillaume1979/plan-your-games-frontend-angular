@@ -1,9 +1,9 @@
 import { Game } from './game';
-import { Player } from './player';
+import { User } from './user';
 
 export class Session {
   id?: number;
   date = new Date();
   game = new Game();
-  participants: Player[] = [];
+  participants: User[] = [];
 }
