@@ -45,10 +45,22 @@ tr:last-of-type td:first-child {
   border-bottom-left-radius: var(--tableItemBorderRadius);
 }
 
+
+//handset style
+
+.handsetTable tbody td:first-child{
+  padding-top: 1.5rem;
+}
+
+.handsetTable tbody td:last-child{
+  padding-bottom: 1.5rem;
+}
+
 .handsetTable td {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
+  gap: 0 1rem;
 }
 
 .handsetTable td::before {
@@ -61,10 +73,22 @@ tr:last-of-type td:first-child {
   display: none;
 }
 
+.handsetTable td {
+  width: 100% !important;
+}
+
 .handsetTable tr:first-of-type td:first-child {
   border-top-right-radius: var(--tableItemBorderRadius);
 }
 
 .handsetTable tr:first-of-type td:first-child {
   border-top-left-radius: var(--tableItemBorderRadius);
+}
+
+.handsetTable tr:last-of-type td:first-child {
+  border-bottom-left-radius: 0;
+}
+
+.handsetTable tr:last-of-type td:last-child {
+  border-bottom-left-radius: var(--tableItemBorderRadius);
 }

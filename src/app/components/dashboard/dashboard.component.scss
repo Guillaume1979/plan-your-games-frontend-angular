@@ -19,3 +19,8 @@ td[data-label="participants"] {
   display: flex;
   gap: 1rem;
 }
+
+td[data-label="nom de la guilde"] {
+  width: 90%;
+  vertical-align: middle;
+}
