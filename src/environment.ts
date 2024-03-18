@@ -11,3 +11,5 @@ export const ENDPOINT_AUTH_DISCORD = `${ENDPOINT_API}/auth/discord/login`;
 export const ENDPOINT_JWT = `${ENDPOINT_API}/auth/discord/getJwtToken`;
 
 export const JWT_TOKEN_KEY = 'pygToken';
+
+export const DISCORD_CDN = 'https://cdn.discordapp.com';

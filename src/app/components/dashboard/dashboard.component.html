@@ -18,7 +18,10 @@
         <td data-label="nom du jeu">{{ session.game.name }}</td>
         <td data-label="participants">
           @for (participant of session.participants; track participant.uuid) {
-            <span>{{ participant.nickname || participant.username }}</span>
+            <span class="participant">
+              <avatar [source]="participant"/>
+              {{ participant.nickname || participant.username }}
+            </span>
           } @empty {
             <span>Aucun participant</span>
           }
@@ -40,7 +43,7 @@
   <tbody>
     @for (guild of user().guilds; track guild) {
       <tr>
-        <td data-label="icône de la guilde">{{ guild.icon }}</td>
+        <td data-label="icône de la guilde"><avatar [source]="guild"/></td>
         <td data-label="nom de la guilde">{{ guild.name }}</td>
       </tr>
     }

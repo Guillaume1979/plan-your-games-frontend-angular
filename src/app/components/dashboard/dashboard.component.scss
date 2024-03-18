@@ -14,3 +14,8 @@ td[data-label="participants"] {
   display: flex;
   flex-direction: column;
 }
+
+.participant {
+  display: flex;
+  gap: 1rem;
+}
