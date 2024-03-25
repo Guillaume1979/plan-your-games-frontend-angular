@@ -1,4 +1,4 @@
-import { Route, Routes } from '@angular/router';
+import { Route, Router, Routes } from '@angular/router';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AuthRedirectComponent } from './auth/auth-redirect.component';
 import { inject } from '@angular/core';
@@ -6,7 +6,11 @@ import { AuthService } from './auth/auth.service';
 
 export const routesWithAuthentication: Route = {
   path: '',
-  canMatch: [() => inject(AuthService).isAuthenticated()],
+  canMatch: [
+    () =>
+      inject(AuthService).isAuthenticated() ||
+      inject(Router).createUrlTree(['welcome']),
+  ],
   children: [
     {
       path: 'dashboard',
